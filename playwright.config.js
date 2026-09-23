@@ -1,5 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+const { channel } = require('node:diagnostics_channel');
 
 module.exports = defineConfig({
   testDir: './tests',
@@ -13,8 +14,16 @@ module.exports = defineConfig({
   },
   projects: [
     {
-      name: 'chromium',
+      name: 'google-chrome',
       use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'microsoft-edge',
+      use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
   ],
 });
