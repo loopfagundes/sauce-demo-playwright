@@ -1,6 +1,5 @@
 // @ts-check
 const { defineConfig, devices } = require("@playwright/test");
-const { channel } = require("node:diagnostics_channel");
 
 module.exports = defineConfig({
   testDir: "./tests",
