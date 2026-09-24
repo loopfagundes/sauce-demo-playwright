@@ -1,0 +1,25 @@
+{
+  "name": "sauce-demo-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test-ui": "npx playwright test --ui",
+    "test-headed": "npx playwright test --headed",
+    "test-chrome": "npx playwright test --project=chrome",
+    "test-firefox": "npx playwright test --project=firefox",
+    "test-edge": "npx playwright test --project=edge",
+    "show-report": "npx playwright show-report"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.2",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "lefthook": "^2.1.14"
+  }
+}
