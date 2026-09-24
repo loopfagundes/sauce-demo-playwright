@@ -2,6 +2,8 @@ pre-commit:
   commands:
     prettier:
       run: npx prettier --write {staged_files}
+      glob: '*.{js,mjs,json,md}'
 
     eslint:
       run: npx eslint {staged_files}
+      glob: "*.{js,mjs,cjs}"
