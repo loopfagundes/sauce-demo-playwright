@@ -1,4 +1,4 @@
-const { LoginPage } = require("../pages/loginpage");
+const { LoginPage } = require("../pages/LoginPage");
 
 class LoginInteractions {
   constructor(page) {
