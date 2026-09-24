@@ -13,7 +13,6 @@ test.describe("Login", () => {
   test("login com sucesso", async ({ page }) => {
     const login = new LoginInteractions(page);
     const inventory = new InventoryInteractions(page);
-    const teste={nome:"Luciano"}
 
     await login.goto();
     await login.login("standard_user", "secret_sauce");
