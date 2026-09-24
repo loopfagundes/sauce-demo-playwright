@@ -1,4 +1,4 @@
-const { InventoryPage } = require('../pages/InventoryPage');
+const { InventoryPage } = require("../pages/InventoryPage");
 
 class InventoryInteractions {
   constructor(page) {

@@ -1,4 +1,4 @@
-const { LoginPage } = require('../pages/loginpage');
+const { LoginPage } = require("../pages/loginpage");
 
 class LoginInteractions {
   constructor(page) {
@@ -7,7 +7,7 @@ class LoginInteractions {
   }
 
   async goto() {
-    await this.page.goto('/');
+    await this.page.goto("/");
   }
 
   async login(username, password) {
