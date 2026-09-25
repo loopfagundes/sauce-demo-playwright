@@ -3,6 +3,7 @@ const { LoginInteractions } = require("../../interactions/LoginInteractions");
 const {
   InventoryInteractions,
 } = require("../../interactions/InventoryInteractions");
+const testData = require("../../fixtures/usuarios.json");
 
 test.describe("Login", () => {
   test("has title", async ({ page }) => {
@@ -15,7 +16,7 @@ test.describe("Login", () => {
     const inventory = new InventoryInteractions(page);
 
     await login.goto();
-    await login.login("standard_user", "secret_sauce");
+    await login.login(testData.valido.usuario, testData.valido.senha);
 
     await expect(page).toHaveURL("inventory.html");
     await expect(inventory.getTitle()).toHaveText("Products");
@@ -25,7 +26,7 @@ test.describe("Login", () => {
     const login = new LoginInteractions(page);
 
     await login.goto();
-    await login.login("usuario_invalido", "senha_errada");
+    await login.login(testData.invalido.usuario, testData.invalido.senha);
 
     await expect(login.getErrorMessage()).toBeVisible();
   });
