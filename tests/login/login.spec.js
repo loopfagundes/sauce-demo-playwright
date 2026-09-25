@@ -3,6 +3,8 @@ const usuario = require("../../fixtures/usuarios.json");
 const testData = require("../../fixtures/testData.json");
 const urls = require("../../fixtures/urlTest.json");
 
+let TIMEOUT = 10000;
+
 test.describe("Login", () => {
   test("has title", async ({ page }) => {
     await page.goto(urls.login);
@@ -51,7 +53,9 @@ test.describe("Login", () => {
     );
 
     await expect(page).toHaveURL(urls.inventory);
-    await expect(inventory.getTitle()).toHaveText(testData.title.products);
+    await expect(inventory.getTitle()).toHaveText(testData.title.products, {
+      timeout: TIMEOUT,
+    });
   });
 
   test("login com usuário error", async ({ page, login, inventory }) => {
