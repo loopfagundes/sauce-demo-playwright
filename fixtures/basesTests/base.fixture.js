@@ -1,6 +1,8 @@
-const base = require('@playwright/test');
-const { LoginInteractions } = require('../../interactions/LoginInteractions');
-const { InventoryInteractions } = require('../../interactions/InventoryInteractions');
+const base = require("@playwright/test");
+const { LoginInteractions } = require("../../interactions/LoginInteractions");
+const {
+  InventoryInteractions,
+} = require("../../interactions/InventoryInteractions");
 
 exports.test = base.test.extend({
   login: async ({ page }, use) => {
