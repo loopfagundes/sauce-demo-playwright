@@ -10,8 +10,12 @@ class InventoryInteractions {
     return this.inventoryPage.title;
   }
 
-  async getItemCount() {
-    return this.inventoryPage.inventoryItems.count();
+  getInventoryList() {
+    return this.inventoryPage.inventoryList;
+  }
+
+  getAddToCartButton() {
+    return this.inventoryPage.addToCartButtons.click();
   }
 }
 

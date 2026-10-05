@@ -10,14 +10,14 @@ class LoginInteractions {
     await this.page.goto("/");
   }
 
-  async login(username, password) {
-    await this.loginPage.usernameInput.fill(username);
-    await this.loginPage.passwordInput.fill(password);
+  async login(nomeUsuario, senha) {
+    await this.loginPage.nomeUsuarioInput.fill(nomeUsuario);
+    await this.loginPage.senhaInput.fill(senha);
     await this.loginPage.loginButton.click();
   }
 
-  getErrorMessage() {
-    return this.loginPage.errorMessage;
+  getErrorMensagem() {
+    return this.loginPage.errorMensagem;
   }
 }
 

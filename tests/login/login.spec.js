@@ -17,20 +17,21 @@ test.describe("Login", () => {
 
     await expect(page).toHaveURL(urls.inventory);
     await expect(inventory.getTitle()).toHaveText(testData.title.products);
+    await expect(inventory.getInventoryList()).toBeVisible();
   });
 
   test("login com credenciais inválidas", async ({ login }) => {
     await login.goto();
     await login.login(usuario.invalido.usuario, usuario.invalido.senha);
 
-    await expect(login.getErrorMessage()).toBeVisible();
+    await expect(login.getErrorMensagem()).toBeVisible();
   });
 
   test("login com credenciais bloqueado", async ({ login }) => {
     await login.goto();
     await login.login(usuario.bloqueado.usuario, usuario.bloqueado.senha);
 
-    await expect(login.getErrorMessage()).toBeVisible();
+    await expect(login.getErrorMensagem()).toBeVisible();
   });
 
   test("login com usuário problemático", async ({ page, login, inventory }) => {
