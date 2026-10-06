@@ -16,6 +16,10 @@ test.describe("Adiciona itens ao carrinho", () => {
     await expect(page).toHaveURL(urls.inventory);
     await expect(inventory.getTitle()).toHaveText(testData.title.products);
     await expect(inventory.getInventoryList()).toBeVisible();
-    await inventory.getAddToCartButton();
+    await inventory.getAdicionaParaCarrinho();
+    await expect(inventory.getQuantidadeCarrinho()).toHaveText(
+      testData.quantidadeCarrinho,
+    );
+    await inventory.getAcessarCarrinho();
   });
 });

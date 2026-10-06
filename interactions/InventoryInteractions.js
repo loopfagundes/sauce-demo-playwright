@@ -14,8 +14,16 @@ class InventoryInteractions {
     return this.inventoryPage.inventoryList;
   }
 
-  getAddToCartButton() {
-    return this.inventoryPage.addToCartButtons.click();
+  getAdicionaParaCarrinho() {
+    return this.inventoryPage.adicionaCarrinhoButton.click();
+  }
+
+  getQuantidadeCarrinho() {
+    return this.inventoryPage.quantidadeCarrinho;
+  }
+
+  getAcessarCarrinho() {
+    return this.inventoryPage.quantidadeCarrinho.click();
   }
 }
 
