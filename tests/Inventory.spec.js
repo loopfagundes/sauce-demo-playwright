@@ -1,7 +1,7 @@
-const { test, expect } = require("../../fixtures/basesTests/base.fixture");
-const usuario = require("../../fixtures/usuarios.json");
-const testData = require("../../fixtures/testData.json");
-const urls = require("../../fixtures/urlTest.json");
+const { test, expect } = require("../fixtures/basesTests/base.fixture");
+const usuario = require("../fixtures/usuarios.json");
+const testData = require("../fixtures/testData.json");
+const urls = require("../fixtures/urlTest.json");
 
 test.describe("Adiciona itens ao carrinho", () => {
   test("has title", async ({ page }) => {
@@ -16,6 +16,10 @@ test.describe("Adiciona itens ao carrinho", () => {
     await expect(page).toHaveURL(urls.inventory);
     await expect(inventory.getTitle()).toHaveText(testData.title.products);
     await expect(inventory.getInventoryList()).toBeVisible();
-    await inventory.getAddToCartButton();
+    await inventory.getAdicionaParaCarrinho();
+    await expect(inventory.getQuantidadeCarrinho()).toHaveText(
+      testData.quantidadeCarrinho,
+    );
+    await inventory.getAcessarCarrinho();
   });
 });

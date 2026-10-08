@@ -1,7 +1,7 @@
-const { test, expect } = require("../../fixtures/basesTests/base.fixture");
-const usuario = require("../../fixtures/usuarios.json");
-const testData = require("../../fixtures/testData.json");
-const urls = require("../../fixtures/urlTest.json");
+const { test, expect } = require("../fixtures/basesTests/base.fixture");
+const usuario = require("../fixtures/usuarios.json");
+const testData = require("../fixtures/testData.json");
+const urls = require("../fixtures/urlTest.json");
 
 let TIMEOUT = 10000;
 
